@@ -1,0 +1,32 @@
+const mongoose = require('mongoose');
+
+const AuditLogSchema = new mongoose.Schema({
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'
+  },
+  action: {
+    type: String,
+    enum: ['upload', 'download', 'share', 'view', 'delete'],
+    required: true
+  },
+  file: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'File'
+  },
+  details: {
+    type: mongoose.Schema.Types.Mixed
+  },
+  ipAddress: {
+    type: String
+  },
+  userAgent: {
+    type: String
+  },
+  timestamp: {
+    type: Date,
+    default: Date.now
+  }
+});
+
+module.exports = mongoose.model('AuditLog', AuditLogSchema);
