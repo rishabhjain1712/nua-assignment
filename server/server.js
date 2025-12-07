@@ -11,7 +11,7 @@ const fileRoutes = require('./routes/fileRoutes');
 const shareRoutes = require('./routes/shareRoutes');
 
 const app = express();
-
+app.set('trust proxy', 1);
 app.use(helmet());
 app.use(compression());
 
