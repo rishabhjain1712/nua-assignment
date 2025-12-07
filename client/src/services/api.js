@@ -2,9 +2,6 @@ import axios from 'axios';
 
 const API = axios.create({
   baseURL: 'https://nua-assignment-mrpz.onrender.com',
-   headers: {
-    'Content-Type': 'application/json'
-  }
 });
 
 API.interceptors.request.use(
