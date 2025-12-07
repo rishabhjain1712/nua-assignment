@@ -38,19 +38,19 @@ export const authAPI = {
 };
 
 export const fileAPI = {
-  upload: (formData) => API.post('/files/upload', formData),
-  getMyFiles: () => API.get('/files/my-files'),
-  getSharedFiles: () => API.get('/files/shared-with-me'),
-  download: (id) => API.get(`/files/download/${id}`, { responseType: 'blob' }),
-  delete: (id) => API.delete(`/files/${id}`)
+  upload: (formData) => API.post('/api/files/upload', formData),
+  getMyFiles: () => API.get('/api/files/my-files'),
+  getSharedFiles: () => API.get('/api/files/shared-with-me'),
+  download: (id) => API.get(`/api/files/download/${id}`, { responseType: 'blob' }),
+  delete: (id) => API.delete(`/api/files/${id}`)
 };
 
 export const shareAPI = {
-  shareWithUser: (data) => API.post('/shares/user', data),
-  generateLink: (data) => API.post('/shares/link', data),
-  accessViaLink: (token) => API.get(`/shares/link/${token}`),
-  getMyShares: () => API.get('/shares/my-shares'),
-  revokeShare: (id) => API.delete(`/shares/${id}`)
+  shareWithUser: (data) => API.post('/api/shares/user', data),
+  generateLink: (data) => API.post('/api/shares/link', data),
+  accessViaLink: (token) => API.get(`/api/shares/link/${token}`),
+  getMyShares: () => API.get('/api/shares/my-shares'),
+  revokeShare: (id) => API.delete(`/api/shares/${id}`)
 };
 
 export default API;
