@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: process.env.REACT_APP_API_URL || 'https://nua-assignment-mrpz.onrender.com',
+  baseURL: 'https://nua-assignment-mrpz.onrender.com',
    headers: {
     'Content-Type': 'application/json'
   }
